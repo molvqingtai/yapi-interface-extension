@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "tsc --watch",
-    "build": "npm run clean && tsc",
+    "dev": "cross-env NODE_ENV=develop esmo build.ts",
+    "build": "cross-env NODE_ENV=production esmo build.ts",
     "lint": "eslint src --ext .js,.ts --cache --fix",
     "clean": "rm -rf dist",
     "prepare": "husky install"
@@ -16,8 +16,9 @@
     "url": "git+https://github.com/molvqingtai/yapi-interface-extension.git"
   },
   "keywords": [
-    "YAPI",
-    "API"
+    "yapi",
+    "yapi-plugin",
+    "interface"
   ],
   "author": "molvqingtai",
   "license": "MIT",
@@ -28,8 +29,14 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "@types/pollyjs__adapter-xhr": "^2.6.1",
+    "@types/pollyjs__core": "^4.3.3",
+    "@types/pollyjs__persister-local-storage": "^4.0.1",
+    "@types/webextension-polyfill": "^0.8.0",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.12.28",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
@@ -38,8 +45,20 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^5.1.0",
+    "esno": "^0.9.1",
+    "glob": "^7.1.7",
     "husky": "^7.0.2",
     "prettier": "^2.4.0",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.3",
+    "zx": "^4.2.0"
+  },
+  "dependencies": {
+    "@pollyjs/adapter-xhr": "^5.1.1",
+    "@pollyjs/core": "^5.1.1",
+    "@pollyjs/persister-local-storage": "^5.1.1",
+    "@webcomponents/custom-elements": "^1.5.0",
+    "lit": "^2.0.0-rc.4",
+    "shiki": "^0.9.11",
+    "webextension-polyfill": "^0.8.0"
   }
 }
