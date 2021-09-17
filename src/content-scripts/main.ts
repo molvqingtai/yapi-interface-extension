@@ -1,6 +1,5 @@
 import browser from 'webextension-polyfill'
-import makeElement from '../utils/make-element'
-import asyncQuerySelector from '../utils/async-query-selector'
+import createElement from '../utils/create-element'
 
 /**
  * 设置 "run_at": "document_start"
@@ -8,7 +7,10 @@ import asyncQuerySelector from '../utils/async-query-selector'
  */
 void (async (path: string) => {
   const src = browser.runtime.getURL(path)
-  const script = makeElement(`<script src="${src}"></script>`)
-  const [head] = await asyncQuerySelector('head')
-  head?.insertAdjacentElement('afterbegin', script)
+  const script = createElement<HTMLScriptElement>(
+    `<script src="${src}"></script>`
+  )
+  script.async = false
+  script.defer = false
+  document.documentElement.appendChild(script)
 })('inject-scripts/main.js')

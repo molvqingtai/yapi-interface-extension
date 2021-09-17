@@ -31,7 +31,6 @@ class App extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-    // console.log(111)
     server.get('/api/interface/get').on('response', (req, res) => {
       console.log(JSON.parse(JSON.parse(res.body).data.res_body))
     })

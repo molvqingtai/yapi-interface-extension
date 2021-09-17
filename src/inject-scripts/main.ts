@@ -1,7 +1,7 @@
 import '@webcomponents/custom-elements'
+import magicRender from '../utils/magic-render'
 import App from './App'
-import customRender from '../utils/custom-render'
 
-customRender(new App(), '#yapi .caseContainer')
+magicRender(new App(), () => document.querySelector('#yapi .caseContainer'))
 
 console.log('yapi-interface-extension')
