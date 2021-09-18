@@ -57,8 +57,9 @@
     "@pollyjs/core": "^5.1.1",
     "@pollyjs/persister-local-storage": "^5.1.1",
     "@webcomponents/custom-elements": "^1.5.0",
+    "highlight.js": "^11.2.0",
     "lit": "^2.0.0-rc.4",
-    "shiki": "^0.9.11",
+    "raw-to-ts": "^0.1.2",
     "webextension-polyfill": "^0.8.0"
   }
 }

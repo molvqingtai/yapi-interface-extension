@@ -9,10 +9,10 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["content-scripts/main.js"],
+      "matches": ["https://yapi.hx8156.com/*"],
+      "js": ["content/main.js"],
       "run_at": "document_start"
     }
   ],
-  "web_accessible_resources": ["inject-scripts/*.js"]
+  "web_accessible_resources": ["inject/*.js"]
 }
