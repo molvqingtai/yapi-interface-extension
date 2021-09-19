@@ -18,7 +18,7 @@ void (async () => {
     minify: true,
     format: 'esm',
     watch: isDevelop,
-    sourcemap: 'inline'
+    sourcemap: isDevelop ? 'inline' : false
   }).then(async (res) => {
     await $`cp -r public/* dist`
     console.timeEnd('Build Success')
