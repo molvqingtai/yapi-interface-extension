@@ -1,6 +1,6 @@
 {
   "name": "yapi-interface-extension",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "为 YAPI 文档添加 TypesScript interface 显示",
   "main": "index.js",
   "type": "module",
@@ -56,7 +56,6 @@
     "@pollyjs/adapter-xhr": "^5.1.1",
     "@pollyjs/core": "^5.1.1",
     "@pollyjs/persister-local-storage": "^5.1.1",
-    "highlight.js": "^11.2.0",
     "lit": "^2.0.0-rc.4",
     "raw-to-ts": "^0.1.3",
     "webextension-polyfill": "^0.8.0"

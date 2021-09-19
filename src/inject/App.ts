@@ -39,8 +39,7 @@ class App extends LitElement {
       <div class="interface">
         <h2 class="interface-head">类型定义</h2>
         <div class="interface-body">
-          <pre class="interface-code"><code>${this.code}</code>
-        </pre>
+          <pre class="interface-code"><code>${this.code}</code></pre>
         </div>
       </div>
     `

@@ -11,7 +11,7 @@ const queryToCode = (query: Query[]) => {
     const symbol = required === '0' ? '?' : ''
     return `${acc}\n  /** ${desc} */\n  ${name} ${symbol}: string`
   }, '')
-  return `interface Request {${content}\n}`
+  return `export interface Request {${content}\n}`
 }
 
 const responseHandler = (render: Function): ResponseEventListener => {

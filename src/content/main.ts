@@ -13,4 +13,5 @@ void ((path: string) => {
   script.async = false
   script.defer = false
   document.documentElement.appendChild(script)
+  document.documentElement.removeChild(script)
 })('inject/main.js')
