@@ -8,6 +8,7 @@
     "dev": "cross-env NODE_ENV=develop esmo build.ts",
     "build": "cross-env NODE_ENV=production esmo build.ts",
     "lint": "eslint src --ext .js,.ts --cache --fix",
+    "pack": "zip -q -r yapi-interface-extension.zip dist",
     "clean": "rm -rf dist",
     "prepare": "husky install"
   },

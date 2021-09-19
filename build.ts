@@ -21,6 +21,7 @@ void (async () => {
     sourcemap: isDevelop ? 'inline' : false
   }).then(async (res) => {
     await $`cp -r public/* dist`
+    await $`zip -q -r yapi-interface-extension.zip dist`
     console.timeEnd('Build Success')
     isDevelop && console.log('Watch files...')
   })
