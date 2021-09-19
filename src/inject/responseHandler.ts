@@ -1,5 +1,5 @@
 import rawToTs from 'raw-to-ts'
-import { ResponseEventListener } from '@pollyjs/core'
+import { XhrResponse } from 'ajax-hook'
 
 interface Query {
   required: string
@@ -14,15 +14,13 @@ const queryToCode = (query: Query[]) => {
   return `export interface Request {${content}\n}`
 }
 
-const responseHandler = (render: Function): ResponseEventListener => {
-  return (req, res) => {
+const responseHandler = (render: Function) => {
+  return (res: XhrResponse) => {
     try {
-      const data = JSON.parse(res.body).data
+      const data = JSON.parse(res.response).data
       const isGet = data.method === 'GET'
-
       const requestRaw = JSON.parse(data?.req_body_other || `{}`)
       const responseRaw = JSON.parse(data?.res_body || `{}`)
-
       const requestCode = isGet
         ? queryToCode(data.req_query)
         : rawToTs(requestRaw, { rootName: 'Request' }).reduce(
