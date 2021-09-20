@@ -4,7 +4,18 @@
 
 
 
+### Install
+
+将根目录 **yapi-interface-extension.zip** 文件解压后的 **dist** 文件夹，拖入 Chrome 扩展界面安装。
+
+
+
 ### Example
 
 ![Example](https://github.com/molvqingtai/yapi-interface-extension/blob/master/example.png)
+
+
+
+### License
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/molvqingtai/yapi-interface-extension/blob/master/LICENSE) file for details
 

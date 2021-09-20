@@ -2,7 +2,7 @@
 
 import { build } from 'esbuild'
 import glob from 'glob'
-import { $ } from 'zx'
+import { $, chalk } from 'zx'
 
 const isDevelop = process.env.NODE_ENV === 'develop'
 const files = glob.sync('src/**/*.ts')
@@ -20,11 +20,21 @@ void (async () => {
     watch: isDevelop,
     sourcemap: isDevelop ? 'inline' : false
   }).then(async (res) => {
-    await $`cp -r public/* dist`
-    await $`zip -q -r yapi-interface-extension.zip dist`
-    console.timeEnd('Build Success')
-    isDevelop && console.log('Watch files...')
+    try {
+      await $`cp -r public/* dist`
+      if (isDevelop) {
+        // 使用 tsc 做类型检查，不生成编译文件
+        await $`tsc --watch --noEmit`
+      } else {
+        await $`tsc --noEmit`
+        await $`zip -q -r yapi-interface-extension.zip dist`
+      }
+      console.timeEnd('Build Success')
+    } catch (error) {
+      res.stop?.()
+      throw error
+    }
   })
 })().catch((error) => {
-  console.log(error)
+  console.error(chalk.red(error))
 })

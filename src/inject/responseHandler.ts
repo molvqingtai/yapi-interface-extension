@@ -1,5 +1,5 @@
 import rawToTs from 'raw-to-ts'
-import { XhrResponse } from 'ajax-hook'
+import { IsomorphicResponse } from '@mswjs/interceptors'
 
 interface Query {
   required: string
@@ -16,9 +16,9 @@ const queryToCode = (query: Query[]) => {
 }
 
 const responseHandler = (render: Function) => {
-  return (res: XhrResponse) => {
+  return (res: IsomorphicResponse) => {
     try {
-      const data = JSON.parse(res.response).data
+      const data = JSON.parse(res.body ?? `{}`).data
       const isGet = data.method === 'GET'
       const requestRaw = JSON.parse(data?.req_body_other || `{}`)
       const responseRaw = JSON.parse(data?.res_body || `{}`)

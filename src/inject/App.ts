@@ -78,6 +78,11 @@ class App extends LitElement {
     }
   }
 
+  connectedCallback() {
+    super.connectedCallback()
+    console.log(`Yapi-Interface-Extension: Rendering completed!`)
+  }
+
   render() {
     return html`
       <div class="interface">
