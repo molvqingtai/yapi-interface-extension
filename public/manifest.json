@@ -9,7 +9,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*/**/interface/api/*"],
+      "matches": ["*://*/*project/*/interface/api/*"],
       "js": ["content/main.js"],
       "run_at": "document_start"
     }
