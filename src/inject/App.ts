@@ -3,6 +3,11 @@ import { customElement, state } from 'lit/decorators.js'
 
 @customElement('interface-extension')
 class App extends LitElement {
+  constructor(code: string) {
+    super()
+    this.code = code
+  }
+
   static styles = css`
     .interface {
       float: left;
@@ -17,6 +22,29 @@ class App extends LitElement {
     }
     .interface-body {
       padding: 0 16px;
+      position: relative;
+    }
+    .interface-copy {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 5px 10px;
+      line-height: 1em;
+      font-size: 16px;
+      top: 10px;
+      right: 30px;
+      border: none;
+      margin: 0;
+      outline: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .interface-copy:hover {
+      background-color: #ffffff;
+      box-shadow: 0 0 1px 0 #ffffff;
+    }
+    .interface-copy:active {
+      box-shadow: none;
+      background-color: rgba(255, 255, 255, 0.8);
     }
     .interface-code {
       background-color: #f8f8f8;
@@ -24,14 +52,30 @@ class App extends LitElement {
       background-color: #32363a;
       padding: 16px;
       border-radius: 4px;
+      max-height: 80vh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+    .interface-code::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+      background-color: transparent;
+    }
+    .interface-code::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.5);
     }
   `
   @state()
   code: string
 
-  constructor(code: string) {
-    super()
-    this.code = code
+  async handleCodeCopy() {
+    try {
+      await navigator.clipboard.writeText(this.code)
+      alert('已复制到剪切板！')
+    } catch (error: any) {
+      alert(`复制失败：${error.message as string}`)
+    }
   }
 
   render() {
@@ -39,6 +83,9 @@ class App extends LitElement {
       <div class="interface">
         <h2 class="interface-head">类型定义</h2>
         <div class="interface-body">
+          <button @click="${this.handleCodeCopy}" class="interface-copy">
+            Copy
+          </button>
           <pre class="interface-code"><code>${this.code}</code></pre>
         </div>
       </div>
