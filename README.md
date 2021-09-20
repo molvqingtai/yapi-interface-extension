@@ -6,7 +6,7 @@
 
 ### Install
 
-将根目录 **yapi-interface-extension.zip** 文件解压后的 **dist** 文件夹，拖入 Chrome 扩展界面安装。
+将根目录 **yapi-interface-extension.zip** 解压后的 **dist** 文件夹拖入 Chrome 扩展界面安装。
 
 
 
