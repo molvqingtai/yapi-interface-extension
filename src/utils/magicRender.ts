@@ -19,9 +19,7 @@ const magicRender = (
     const watcher = watchElement(
       'enter',
       selector,
-      (target: Element) => {
-        target.appendChild(app)
-      },
+      (target: Element) => target.appendChild(app),
       true
     )
     // 创建销毁函数

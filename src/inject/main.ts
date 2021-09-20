@@ -9,4 +9,4 @@ import render from './render'
  */
 listenResponse('/api/interface/get', responseHandler(render))
 
-console.log(`%c Yapi-Interface-Extension v1.0.1`, 'color:#ff865c')
+console.log(`%c Yapi-Interface-Extension v1.2.1`, 'color:#ff865c')

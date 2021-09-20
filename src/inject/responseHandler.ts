@@ -6,6 +6,7 @@ interface Query {
   name: string
   desc: string
 }
+/** query 参数生成 interface */
 const queryToCode = (query: Query[]) => {
   const content = query.reduce((acc, { required, name, desc }) => {
     const symbol = required === '0' ? '?' : ''

@@ -1,6 +1,6 @@
 {
   "name": "yapi-interface-extension",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "为 YAPI 文档添加 TypesScript interface 显示",
   "main": "index.js",
   "type": "module",

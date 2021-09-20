@@ -1,7 +1,7 @@
 {
   "name": "Yapi-Interface-Extension",
   "manifest_version": 2,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "molvqingtai",
   "description": "在 YAPI 接口文档中显示 TypeScript Interface",
   "icons": {
@@ -9,7 +9,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
+      "matches": ["*://*/**/interface/api/*"],
       "js": ["content/main.js"],
       "run_at": "document_start"
     }
