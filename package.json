@@ -30,9 +30,6 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
-    "@types/pollyjs__adapter-xhr": "^2.6.1",
-    "@types/pollyjs__core": "^4.3.3",
-    "@types/pollyjs__persister-local-storage": "^4.0.1",
     "@types/webextension-polyfill": "^0.8.0",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
