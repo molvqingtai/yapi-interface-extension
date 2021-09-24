@@ -7,4 +7,4 @@ import render from './render'
  *
  * onResponse -> new App() -> Root mounted -> render(app)
  */
-listenResponse('/interface/api/', '/api/interface/get', responseHandler(render))
+listenResponse('/api/interface/get', responseHandler(render))

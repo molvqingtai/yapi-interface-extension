@@ -6,7 +6,9 @@
 
 ### Install
 
-将根目录 **yapi-interface-extension.zip** 解压后的 **dist** 文件夹拖入 Chrome 扩展界面安装。
+1. clone 项目，执行 `yarn install`。
+2. 修改 `public/manifest.json` 文件的 `matches` 字段，将 www.xxx.com 改为你部署的 YAPI 域名。
+3. 执行 `yarn build`，将生成后的 dist 文件夹拖入 chrome 插件页面。
 
 
 

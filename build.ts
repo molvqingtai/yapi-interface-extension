@@ -27,7 +27,6 @@ void (async () => {
         await $`tsc --watch --noEmit`
       } else {
         await $`tsc --noEmit`
-        await $`zip -q -r yapi-interface-extension.zip dist`
       }
       console.timeEnd('Build Success')
     } catch (error) {
