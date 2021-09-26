@@ -14,7 +14,7 @@
 
 ### Example
 
-![Example](https://github.com/molvqingtai/yapi-interface-extension/blob/master/example.png)
+![Example](https://github.com/molvqingtai/yapi-interface-extension/blob/master/example.jpg)
 
 
 
