@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
+import './components/style-code'
 
 @customElement('interface-extension')
 class App extends LitElement {
@@ -47,8 +48,6 @@ class App extends LitElement {
       background-color: rgba(255, 255, 255, 0.8);
     }
     .interface-code {
-      background-color: #f8f8f8;
-      color: #e0ffff;
       background-color: #32363a;
       padding: 16px;
       border-radius: 4px;
@@ -91,7 +90,9 @@ class App extends LitElement {
           <button @click="${this.handleCodeCopy}" class="interface-copy">
             Copy
           </button>
-          <pre class="interface-code"><code>${this.code}</code></pre>
+          <div class="interface-code">
+            <style-code code="${this.code}"></style-code>
+          </div>
         </div>
       </div>
     `
