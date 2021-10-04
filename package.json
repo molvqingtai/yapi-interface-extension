@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/molvqingtai/yapi-interface-extension#readme",
   "devDependencies": {
-    "@commitlint/cli": "^13.1.0",
+    "@commitlint/cli": "^13.2.0",
     "@commitlint/config-conventional": "^13.1.0",
     "@types/webextension-polyfill": "^0.8.0",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
