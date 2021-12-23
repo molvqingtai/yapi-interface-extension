@@ -87,9 +87,7 @@ class App extends LitElement {
       <div class="interface">
         <h2 class="interface-head">类型定义</h2>
         <div class="interface-body">
-          <button @click="${this.handleCodeCopy}" class="interface-copy">
-            Copy
-          </button>
+          <button @click="${this.handleCodeCopy}" class="interface-copy">Copy</button>
           <div class="interface-code">
             <style-code code="${this.code}"></style-code>
           </div>

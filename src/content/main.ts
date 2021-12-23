@@ -7,9 +7,7 @@ import createElement from '../utils/createElement'
  */
 void ((path: string) => {
   const src = browser.runtime.getURL(path)
-  const script = createElement<HTMLScriptElement>(
-    `<script src="${src}"></script>`
-  )
+  const script = createElement<HTMLScriptElement>(`<script src="${src}"></script>`)
   script.async = false
   script.defer = false
   document.documentElement.appendChild(script)

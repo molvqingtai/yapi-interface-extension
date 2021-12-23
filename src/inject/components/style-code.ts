@@ -34,15 +34,11 @@ class StyleCode extends LitElement {
   code = ''
 
   private highlight(code: string) {
-    return Prism.highlight(code, Prism.languages.typescript, 'typescript')
+    return unsafeHTML(Prism.highlight(code, Prism.languages.typescript, 'typescript'))
   }
 
   render() {
-    return html`
-      <pre class="style-code"><code>${unsafeHTML(
-        this.highlight(this.code)
-      )}</code></pre>
-    `
+    return html`<pre class="style-code"><code>${this.highlight(this.code)}</code></pre>`
   }
 }
 export default StyleCode

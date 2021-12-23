@@ -4,6 +4,7 @@ import { build } from 'esbuild'
 import glob from 'glob'
 import fs from 'fs-extra'
 import { $, chalk } from 'zx'
+import { version } from './package.json'
 
 const isDevelop = process.env.NODE_ENV === 'develop'
 const files = glob.sync('src/**/*.ts')
@@ -28,7 +29,6 @@ void (async () => {
         await $`tsc --watch --noEmit`
       } else {
         await $`tsc --noEmit`
-        const { version } = await fs.readJSON('package.json')
         await $`zip -q -r yapi-interface-extension-v${version}.zip dist`
       }
       console.timeEnd('Build Success')

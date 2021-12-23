@@ -4,8 +4,7 @@
  * @return {Element} 元素对象
  */
 const createElement = <T extends Element>(template: string) => {
-  return new Range().createContextualFragment(template)
-    .firstElementChild as unknown as T
+  return new Range().createContextualFragment(template).firstElementChild as unknown as T
 }
 
 export default createElement
