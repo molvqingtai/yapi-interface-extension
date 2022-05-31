@@ -1,7 +1,7 @@
 {
   "name": "Yapi-Interface-Extension",
-  "manifest_version": 2,
-  "version": "1.2.1",
+  "manifest_version": 3,
+  "version": "1.2.2",
   "author": "molvqingtai",
   "description": "在 YAPI 接口文档中显示 TypeScript Interface",
   "icons": {
@@ -14,6 +14,10 @@
       "run_at": "document_start"
     }
   ],
-  "web_accessible_resources": ["inject/*.js"],
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
+  "web_accessible_resources": [
+    {
+      "resources": ["*.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
