@@ -4,13 +4,13 @@ import { IsomorphicResponse } from '@mswjs/interceptors'
 interface Query {
   required: string
   name: string
-  desc: string
+  desc?: string
 }
 /** query 参数生成 interface */
 const queryToCode = (query: Query[]) => {
   const content = query.reduce((acc, { required, name, desc }) => {
     const symbol = required === '0' ? ' ?' : ''
-    return `${acc}\n  /** ${desc} */\n  ${name}${symbol}: string;`
+    return `${acc}\n  /** ${desc || '注释'} */\n  ${name}${symbol}: string;`
   }, '')
   return `export interface Request {${content}\n}`
 }
