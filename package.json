@@ -52,9 +52,9 @@
   },
   "dependencies": {
     "@mswjs/interceptors": "^0.13.0",
-    "@types/prismjs": "^1.16.6",
+    "@types/prismjs": "^1.26.0",
     "lit": "^2.0.2",
-    "prismjs": "^1.25.0",
+    "prismjs": "^1.28.0",
     "raw-to-ts": "^0.1.4",
     "webextension-polyfill": "^0.8.0"
   }
